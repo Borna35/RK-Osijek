@@ -1,0 +1,100 @@
+/* Rukometni klub Osijek – stilovi. Boje su CSS varijable na vrhu. */
+:root {
+  --crvena: #b3262e;
+  --crvena-tamna: #8e1d24;
+  --crna: #16161a;
+  --pozadina: #e9e9ec;
+  --bijela: #ffffff;
+  --tekst: #2b1d1d;
+  --tekst-blijedo: #6b5f66;
+  --linija: #dcdce0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: var(--pozadina);
+  color: var(--tekst);
+}
+main { flex: 1; }
+h2, h3 { margin: 0; text-transform: uppercase; }
+a { color: var(--crvena); }
+.okvir { width: 100%; max-width: 1100px; margin: 0 auto; padding: 24px 16px 40px; }
+
+/* Zaglavlje i navigacija */
+.zaglavlje { background: var(--crvena); border-bottom: 4px solid var(--crna); }
+.zaglavlje__naslov { display: flex; justify-content: center; align-items: center; gap: 14px; padding: 16px; flex-wrap: wrap; }
+.logo { color: #fff; text-decoration: none; font-size: 1.5rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+.autor { color: #fff; font-size: 0.8rem; padding-left: 14px; border-left: 1px solid rgba(255, 255, 255, 0.5); }
+.zaglavlje nav { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--bijela); }
+.zaglavlje nav a { text-align: center; padding: 16px 8px; color: var(--crna); text-decoration: none; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.85rem; border-bottom: 4px solid transparent; }
+.zaglavlje nav a:hover { background: #f4f4f6; }
+.zaglavlje nav a.aktivno { color: var(--crvena); border-bottom-color: var(--crvena); }
+
+/* Naslovi */
+.naslov { font-size: 2rem; font-weight: 900; margin-bottom: 8px; }
+.naslov-red { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin: 20px 0 16px; }
+.naslov-red .naslov { margin: 0; }
+.opis { color: var(--tekst-blijedo); margin: 0 0 20px; }
+
+/* Kartice s brojkama */
+.kartice { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.kartica { background: var(--crna); color: #fff; text-align: center; padding: 20px 12px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.kartica strong { font-size: 2.6rem; line-height: 1; border-bottom: 4px solid var(--crvena); padding: 0 12px 6px; }
+.kartica span { text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; }
+
+/* Gumbi i linkovi */
+.gumbi { display: flex; gap: 12px; flex-wrap: wrap; }
+.gumb { display: inline-block; font: inherit; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.8rem; padding: 12px 20px; background: var(--crvena); color: #fff; border: 2px solid var(--crvena); cursor: pointer; text-decoration: none; }
+.gumb:hover { background: var(--crvena-tamna); border-color: var(--crvena-tamna); }
+.gumb--sporedni { background: var(--bijela); color: var(--crna); border-color: var(--crna); }
+.gumb--sporedni:hover { background: var(--crna); color: #fff; border-color: var(--crna); }
+.link { background: none; border: 0; padding: 0; font: inherit; font-weight: 700; color: var(--crvena); text-decoration: underline; cursor: pointer; }
+.link--blijedo { opacity: 0.65; }
+.potvrda { display: inline-flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.potvrda small { color: var(--tekst-blijedo); }
+:focus-visible { outline: 3px solid var(--crna); outline-offset: 2px; }
+
+/* Tablice */
+.tablica-omot { overflow-x: auto; background: var(--bijela); }
+table { width: 100%; border-collapse: collapse; }
+th { background: var(--crna); color: #fff; text-align: left; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.06em; padding: 14px 12px; }
+td { padding: 14px 12px; border-bottom: 1px solid var(--linija); vertical-align: middle; }
+tbody tr:nth-child(even) { background: #f8f8fa; }
+.akcije { display: flex; gap: 14px; justify-content: flex-end; flex-wrap: wrap; }
+.prazno { text-align: center; color: var(--tekst-blijedo); padding: 28px; }
+.znacka { display: inline-block; padding: 3px 10px; font-size: 0.75rem; font-weight: 800; background: #d8d8dc; color: var(--tekst-blijedo); }
+.znacka--da { background: var(--crvena); color: #fff; }
+
+/* Filteri */
+.filteri { display: flex; gap: 16px; align-items: flex-end; flex-wrap: wrap; margin-bottom: 16px; }
+.filteri select, .filteri input { min-width: 180px; }
+.zbroj { padding-bottom: 12px; color: var(--tekst-blijedo); }
+
+/* Forme */
+.forma { background: var(--bijela); padding: 24px; margin-bottom: 20px; display: grid; gap: 16px; }
+.forma__mreza { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.forma__gumbi { display: flex; gap: 12px; }
+.polje { display: flex; flex-direction: column; gap: 6px; font-size: 0.85rem; color: var(--tekst-blijedo); }
+.polje--uz { font-size: 0.8rem; }
+input, select, textarea { font: inherit; color: var(--tekst); padding: 11px 12px; border: 1px solid var(--linija); background: #fff; width: 100%; }
+.polje--uz input { width: auto; }
+.filteri select { width: auto; }
+textarea { resize: vertical; }
+.greska { color: var(--crvena); font-weight: 700; font-size: 0.8rem; }
+.kvacica { display: flex; align-items: center; gap: 10px; }
+.kvacica input { width: auto; accent-color: var(--crvena); }
+.kvacica--sredina { align-self: end; padding-bottom: 12px; }
+
+/* Podnožje */
+.podnozje { background: var(--crna); color: #fff; text-align: center; padding: 28px 16px; border-top: 4px solid var(--crvena); }
+
+@media (max-width: 600px) {
+  .logo { font-size: 1.1rem; letter-spacing: 0.08em; }
+  .naslov { font-size: 1.5rem; }
+}
